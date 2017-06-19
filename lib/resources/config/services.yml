@@ -1,0 +1,39 @@
+parameters:
+
+    conga.template.annotation.listener.constructor:              conga-view:listener/annotation/template
+    conga.controller.template.annotations.handler.constructor:   conga-view:annotation/handler/TemplateAnnotationHandler
+    conga.template.response.handler.constructor:                 conga-view:response/TemplateResponseHandler
+
+services:
+
+    # the template response handler
+    conga.template.response.handler:
+        constructor: "%conga.template.response.handler.constructor%"
+        arguments: ['@service_container']
+        
+    # handler to process the template annotations on controllers
+    conga.controller.template.annotations.handler:
+        constructor: "%conga.controller.template.annotations.handler.constructor%"
+        tags:
+            - { name: controller.annotation.handler, method: handleAnnotations }
+
+    # template url() helper
+    conga.template.helper.url:
+        constructor: conga-view:helper/UrlHelper
+        arguments: ["@router"]
+        tags:
+            - { name: template.helper }
+
+    # template path() helper
+    conga.template.helper.path:
+        constructor: conga-view:helper/PathHelper
+        arguments: ["@service_container"]
+        tags:
+            - { name: template.helper }
+
+    # conga client js helper
+    conga.template.helper.conga:
+        constructor: conga-view:helper/conga
+        arguments: ["@service_container"]
+        tags:
+            - { name: template.helper }

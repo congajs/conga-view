@@ -1,0 +1,38 @@
+{
+  "name": "conga-view",
+  "version": "2.0.0-dev",
+  "description": "Template handler for the Conga.js Framework",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/jasmine/bin/jasmine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/congajs/conga-view.git"
+  },
+  "keywords": [],
+  "author": "Marc Roulias",
+  "contributors": [
+    {
+      "name": "Anthony Matarazzo",
+      "email": "email@anthonymatarazzo.com"
+    }
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": "6.0.0"
+  },
+  "dependencies": {
+    "conga-annotations": "1.0.0",
+    "consolidate": "^0.14.5"
+  },
+  "devDependencies": {
+    "jasmine": "^2.6.0",
+    "request": "^2.81.0",
+    "conga-framework": "congajs/conga-framework#2.0.0-dev",
+    "twig": "1.10.5"
+  },
+  "readmeFilename": "README.md"
+}

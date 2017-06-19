@@ -1,0 +1,6 @@
+# views
+view:
+
+    engine: twig
+    extension: html.twig
+    cache: false
