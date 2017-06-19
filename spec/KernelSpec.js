@@ -20,7 +20,6 @@ describe("Kernel", () => {
 
         kernel.addBundlePaths({
             'demo-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'demo-bundle'),
-            'test-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'test-bundle'),
             'conga-view': path.join(__dirname, '..')
         });
     });

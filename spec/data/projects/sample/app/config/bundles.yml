@@ -18,5 +18,4 @@ bundles:
 
     test:
 
-        # add bundles that are only used for development
-        - test-bundle
+        # add bundles that are only used for tests
