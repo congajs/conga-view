@@ -9,8 +9,6 @@ describe("Kernel", () => {
 
     beforeAll((done) => {
 
-        const p = path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'var', 'data', 'nedb', 'articles.db');
-
         kernel = new Kernel(
             path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample'),
             'app',
