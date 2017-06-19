@@ -7,7 +7,7 @@ describe("Kernel", () => {
 
     let kernel;
 
-    beforeAll(() => {
+    beforeAll((done) => {
 
         const p = path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'var', 'data', 'nedb', 'articles.db');
 
@@ -22,25 +22,25 @@ describe("Kernel", () => {
             'demo-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'demo-bundle'),
             'conga-view': path.join(__dirname, '..')
         });
-    });
-
-    it("should boot", (done) => {
 
         kernel.boot(() => {
-
-            request({
-                uri: 'http://localhost:5555/',
-                method: 'GET'
-
-            }, (error, response, body) => {
-                expect(response.statusCode).toEqual(200);
-                expect(response.headers['content-type']).toEqual('text/html; charset=utf-8');
-                expect(body).toEqual("<h1>Hello bar</h1>\n");
-                done();
-            });
-
-
+            done();
         });
+    });
+
+    it("should render return a valid response with a rendered template", (done) => {
+
+        request({
+            uri: 'http://localhost:5555/',
+            method: 'GET'
+
+        }, (error, response, body) => {
+            expect(response.statusCode).toEqual(200);
+            expect(response.headers['content-type']).toEqual('text/html; charset=utf-8');
+            expect(body).toEqual("<h1>Hello bar</h1>\n");
+            done();
+        });
+
 
     });
 
