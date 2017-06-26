@@ -15,10 +15,44 @@ module.exports = class DefaultController extends Controller {
     }
 
     /**
-     * @Route("/hello", name="default.hello", methods=["GET"])
+     * @Route("/test-layout", name="default.test.layout", methods=["GET"])
      * @Template
      */
-    hello(req, res) {
-        res.return({hello: 'world'});
+    testLayout(req, res) {
+        res.return();
+    }
+
+    /**
+     * @Route("/test-include", name="default.test.include", methods=["GET"])
+     * @Template
+     */
+    testInclude(req, res) {
+        res.return();
+    }
+
+    /**
+     * @Route("/test-data", name="default.test.data", methods=["GET"])
+     * @Template
+     */
+    testData(req, res) {
+        res.return({
+            hello: 'world'
+        });
+    }
+
+    /**
+     * @Route("/test-helpers", name="default.test.helpers", methods=["GET"])
+     * @Template
+     */
+    testHelpers(req, res) {
+        res.return();
+    }
+
+    /**
+    * @Route("/route-with-params/:one/:two", name="default.route.with.params", methods=["GET"])
+    * @Template
+     */
+    routeWithParams(req, res) {
+        res.return();
     }
 }

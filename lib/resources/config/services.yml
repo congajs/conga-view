@@ -1,16 +1,23 @@
 parameters:
 
-    conga.template.annotation.listener.constructor:              conga-view:listener/annotation/template
-    conga.controller.template.annotations.handler.constructor:   conga-view:annotation/handler/TemplateAnnotationHandler
-    conga.template.response.handler.constructor:                 conga-view:response/TemplateResponseHandler
+    conga.view.manager.constructor:                              "@conga/conga-view:CongaViewManager"
+    conga.template.annotation.listener.constructor:              "@conga/conga-view:listener/annotation/template"
+    conga.controller.template.annotations.handler.constructor:   "@conga/conga-view:annotation/handler/TemplateAnnotationHandler"
+    conga.template.response.handler.constructor:                 "@conga/conga-view:response/TemplateResponseHandler"
 
 services:
+
+    conga.view.manager:
+        constructor: "%conga.view.manager.constructor%"
+        tags:
+            - { name: kernel.event, event: kernel.compile, method: onKernelCompile, priority: 2048 }
+
 
     # the template response handler
     conga.template.response.handler:
         constructor: "%conga.template.response.handler.constructor%"
         arguments: ['@service_container']
-        
+
     # handler to process the template annotations on controllers
     conga.controller.template.annotations.handler:
         constructor: "%conga.controller.template.annotations.handler.constructor%"
@@ -19,21 +26,21 @@ services:
 
     # template url() helper
     conga.template.helper.url:
-        constructor: conga-view:helper/UrlHelper
+        constructor: "@conga/conga-view:helper/UrlHelper"
         arguments: ["@router"]
         tags:
             - { name: template.helper }
 
     # template path() helper
     conga.template.helper.path:
-        constructor: conga-view:helper/PathHelper
+        constructor: "@conga/conga-view:helper/PathHelper"
         arguments: ["@service_container"]
         tags:
             - { name: template.helper }
 
     # conga client js helper
     conga.template.helper.conga:
-        constructor: conga-view:helper/conga
+        constructor: "@conga/conga-view:helper/conga"
         arguments: ["@service_container"]
         tags:
             - { name: template.helper }

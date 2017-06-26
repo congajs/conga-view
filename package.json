@@ -25,13 +25,13 @@
     "node": "6.0.0"
   },
   "dependencies": {
-    "conga-annotations": "1.0.0",
-    "consolidate": "^0.14.5"
+    "@conga/conga-annotations": "1.0.0"
   },
   "devDependencies": {
     "jasmine": "^2.6.0",
     "request": "^2.81.0",
     "conga-framework": "congajs/conga-framework#2.0.0-dev",
+    "@conga/conga-twig": "*",
     "twig": "1.10.5"
   },
   "readmeFilename": "README.md"
