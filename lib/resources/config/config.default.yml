@@ -1,6 +1,6 @@
 # views
 view:
 
-    engine: twig
-    extension: html.twig
-    cache: false
+    default.engine: twig
+    # extension: html.twig
+    # cache: false
