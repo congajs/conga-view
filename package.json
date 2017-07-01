@@ -1,5 +1,5 @@
 {
-  "name": "conga-view",
+  "name": "@conga/framework-view",
   "version": "2.0.0-dev",
   "description": "Template handler for the Conga.js Framework",
   "directories": {
@@ -30,8 +30,8 @@
   "devDependencies": {
     "jasmine": "^2.6.0",
     "request": "^2.81.0",
-    "conga-framework": "congajs/conga-framework#2.0.0-dev",
-    "@conga/conga-twig": "*",
+    "@conga/framework": "2.0.0-dev",
+    "@conga/framework-view-twig": "*",
     "twig": "1.10.5"
   },
   "readmeFilename": "README.md"

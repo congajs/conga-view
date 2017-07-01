@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const request = require('request');
-const Kernel = require('conga-framework/lib/kernel/TestKernel');
+const Kernel = require('@conga/framework/lib/kernel/TestKernel');
 
 describe("Kernel", () => {
 
@@ -18,8 +18,8 @@ describe("Kernel", () => {
 
         kernel.addBundlePaths({
             'demo-bundle': path.join(__dirname, '..', 'spec', 'data', 'projects', 'sample', 'src', 'demo-bundle'),
-            '@conga/conga-view': path.join(__dirname, '..'),
-            '@conga/conga-twig': path.join(__dirname, '..', 'node_modules', '@conga', 'conga-twig')
+            '@conga/framework-view': path.join(__dirname, '..'),
+            '@conga/framework-view-twig': path.join(__dirname, '..', 'node_modules', '@conga', 'framework-view-twig')
         });
 
         kernel.boot(() => {

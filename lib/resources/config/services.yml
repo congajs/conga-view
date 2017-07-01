@@ -1,9 +1,9 @@
 parameters:
 
-    conga.view.manager.constructor:                              "@conga/conga-view:CongaViewManager"
-    conga.template.annotation.listener.constructor:              "@conga/conga-view:listener/annotation/template"
-    conga.controller.template.annotations.handler.constructor:   "@conga/conga-view:annotation/handler/TemplateAnnotationHandler"
-    conga.template.response.handler.constructor:                 "@conga/conga-view:response/TemplateResponseHandler"
+    conga.view.manager.constructor:                              "@conga/framework-view:CongaViewManager"
+    conga.template.annotation.listener.constructor:              "@conga/framework-view:listener/annotation/template"
+    conga.controller.template.annotations.handler.constructor:   "@conga/framework-view:annotation/handler/TemplateAnnotationHandler"
+    conga.template.response.handler.constructor:                 "@conga/framework-view:response/TemplateResponseHandler"
 
 services:
 
@@ -26,21 +26,21 @@ services:
 
     # template url() helper
     conga.template.helper.url:
-        constructor: "@conga/conga-view:helper/UrlHelper"
+        constructor: "@conga/framework-view:helper/UrlHelper"
         arguments: ["@router"]
         tags:
             - { name: template.helper }
 
     # template path() helper
     conga.template.helper.path:
-        constructor: "@conga/conga-view:helper/PathHelper"
+        constructor: "@conga/framework-view:helper/PathHelper"
         arguments: ["@service_container"]
         tags:
             - { name: template.helper }
 
     # conga client js helper
     conga.template.helper.conga:
-        constructor: "@conga/conga-view:helper/conga"
+        constructor: "@conga/framework-view:helper/conga"
         arguments: ["@service_container"]
         tags:
             - { name: template.helper }

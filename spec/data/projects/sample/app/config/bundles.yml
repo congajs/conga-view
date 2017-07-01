@@ -5,7 +5,7 @@ bundles:
 
         # project bundles (from src/ directory)
         - demo-bundle
-        - "@conga/conga-twig"
+        - "@conga/framework-view-twig"
 
         # core conga bundles (from node_modules/ directory)
         #- conga-assets

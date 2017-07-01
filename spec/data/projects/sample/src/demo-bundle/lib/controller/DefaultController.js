@@ -1,5 +1,5 @@
-const Controller = require('conga-framework/lib/controller/Controller');
-const ErrorResponse = require('conga-framework/lib/response/ErrorResponse');
+const Controller = require('@conga/framework/lib/controller/Controller');
+const ErrorResponse = require('@conga/framework/lib/response/ErrorResponse');
 
 /**
  * @Route("/")
