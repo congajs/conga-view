@@ -108,4 +108,20 @@ describe("Kernel", () => {
 
     });
 
+    it("should allow you to return a custom status code prior to the controller executing", (done) => {
+
+        request({
+            uri: 'http://localhost:5555/test-access-denied',
+            method: 'GET'
+
+        }, (error, response, body) => {
+
+            expect(response.statusCode).toEqual(401);
+            expect(response.headers['content-type']).toEqual('text/html; charset=utf-8');
+            expect(body).toEqual('Access Denied');
+            done();
+        });
+
+    });
+
 });

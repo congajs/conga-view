@@ -1,10 +1,10 @@
-parameters:
-
-    demo.bundle.service.class: demo-bundle:service/DemoService
-
 services:
 
-    demo.bundle.service:
+    demo.bundle.controller.listener:
+        constructor: demo-bundle:listener/DemoControllerListener
+        tags:
+            - { name: kernel.event, event: kernel.pre_controller, method: onPreController }
 
-        constructor: "%demo.bundle.service.class%"
+    demo.bundle.service:
+        constructor: demo-bundle:service/DemoService
         arguments: ['@service_container']

@@ -49,6 +49,14 @@ module.exports = class DefaultController extends Controller {
     }
 
     /**
+     * @Route("/test-access-denied", name="default.test.access_denied", methods=["GET"])
+     * @Template
+     */
+    testAccessDenied(req, res) {
+        res.return();
+    }
+
+    /**
     * @Route("/route-with-params/:one/:two", name="default.route.with.params", methods=["GET"])
     * @Template
      */
