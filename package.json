@@ -25,12 +25,12 @@
     "node": "6.0.0"
   },
   "dependencies": {
-    "@conga/annotations": "1.0.0"
+    "@conga/annotations": "^1.0.0"
   },
   "devDependencies": {
     "jasmine": "^2.6.0",
     "request": "^2.81.0",
-    "@conga/framework": "latest",
+    "@conga/framework": "^2.0.0",
     "@conga/framework-view-twig": "latest",
     "twig": "1.10.5"
   },
