@@ -1,26 +1,19 @@
-parameters:
-
-    conga.view.manager.constructor:                              "@conga/framework-view:CongaViewManager"
-    conga.template.annotation.listener.constructor:              "@conga/framework-view:listener/annotation/template"
-    conga.controller.template.annotations.handler.constructor:   "@conga/framework-view:annotation/handler/TemplateAnnotationHandler"
-    conga.template.response.handler.constructor:                 "@conga/framework-view:response/TemplateResponseHandler"
-
 services:
 
+    # the view manager registers view-engines
     conga.view.manager:
-        constructor: "%conga.view.manager.constructor%"
+        constructor: "@conga/framework-view:CongaViewManager"
         tags:
             - { name: kernel.event, event: kernel.compile, method: onKernelCompile, priority: 2048 }
 
-
     # the template response handler
     conga.template.response.handler:
-        constructor: "%conga.template.response.handler.constructor%"
+        constructor: "@conga/framework-view:response/TemplateResponseHandler"
         arguments: ['@service_container']
 
     # handler to process the template annotations on controllers
     conga.controller.template.annotations.handler:
-        constructor: "%conga.controller.template.annotations.handler.constructor%"
+        constructor: "@conga/framework-view:annotation/handler/TemplateAnnotationHandler"
         tags:
             - { name: controller.annotation.handler, method: handleAnnotations }
 
@@ -40,7 +33,7 @@ services:
 
     # conga client js helper
     conga.template.helper.conga:
-        constructor: "@conga/framework-view:helper/conga"
+        constructor: "@conga/framework-view:helper/CongaHelper"
         arguments: ["@service_container"]
         tags:
             - { name: template.helper }
