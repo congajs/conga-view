@@ -108,7 +108,7 @@ describe("Kernel", () => {
 
     });
 
-    it("should allow you to return a custom status code prior to the controller executing", (done) => {
+    xit("should allow you to return a custom status code prior to the controller executing", (done) => {
 
         request({
             uri: 'http://localhost:5555/test-access-denied',
