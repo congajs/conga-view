@@ -6,6 +6,10 @@ services:
         tags:
             - { name: kernel.event, event: kernel.compile, method: onKernelCompile, priority: 2048 }
 
+    # the view-engine used when none can be found
+    conga.view.engine._error:
+        constructor: "@conga/framework-view:engine/TemplateEngine"
+
     # the template response handler
     conga.template.response.handler:
         constructor: "@conga/framework-view:response/TemplateResponseHandler"
