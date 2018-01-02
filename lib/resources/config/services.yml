@@ -6,6 +6,11 @@ services:
         tags:
             - { name: kernel.event, event: kernel.compile, method: onKernelCompile, priority: 2048 }
 
+    # the template service
+    conga.view.template:
+        constructor: "@conga/framework-view:service/TemplateService.js"
+        arguments: ["@service_container"]
+
     # the view-engine used when none can be found
     conga.view.engine._error:
         constructor: "@conga/framework-view:engine/TemplateEngine"
