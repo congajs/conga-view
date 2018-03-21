@@ -1,6 +1,6 @@
 {
   "name": "@conga/framework-view",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Template handler for the Conga.js Framework",
   "directories": {
     "test": "test"
